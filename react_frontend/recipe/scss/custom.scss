@@ -1,0 +1,83 @@
+@use "sass:map";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+$utilities: map-merge(
+                $utilities,
+                (
+                        "top": map-merge(
+                                        map-get($utilities, "top"),
+                                        (
+                                                values: map-merge(
+                                                                map-get(map-get($utilities, "top"), "values"),
+                                                                        (
+                                                                                10: 10%,
+                                                                                30: 30%
+                                                                        ),
+                                                ),
+                                        ),
+                        ),
+                )
+);
+$utilities: map-merge(
+                $utilities,
+                (
+                        "end": map-merge(
+                                        map-get($utilities, "end"),
+                                        (
+                                                values: map-merge(
+                                                                map-get(map-get($utilities, "end"), "values"),
+                                                                (
+                                                                        10: 10%,
+                                                                ),
+                                                ),
+                                        ),
+                        ),
+                )
+);
+$utilities: map-merge(
+                $utilities,
+                (
+                        "start": map-merge(
+                                        map-get($utilities, "start"),
+                                        (
+                                                values: map-merge(
+                                                                map-get(map-get($utilities, "start"), "values"),
+                                                                (
+                                                                        3: 3%,
+                                                                        20: 20%
+                                                                ),
+                                                ),
+                                        ),
+                        ),
+                )
+);
+
+$box-shadow-w: (
+0 .2rem 5rem rgba($black, .7)
+);
+
+
+$utilities: map-merge(
+                $utilities,
+                (
+                        "shadow": map-merge(
+                                        map-get($utilities, "shadow"),
+                                        (
+                                                values: map-merge(
+                                                                map-get(map-get($utilities, "shadow"), "values"),
+                                                                (
+                                                                        w: $box-shadow-w
+                                                                ),
+                                                ),
+                                        ),
+                        ),
+                )
+);
+
+@import "../node_modules/bootstrap/scss/utilities/api";
